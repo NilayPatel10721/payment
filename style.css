@@ -19,13 +19,13 @@ body {
 
   overflow: hidden;
 
-  font-family: poppins;
+  font-family: 'Poppins', sans-serif;
 
   background-image: url('hello.jpg');
 
   background-size: cover;  
   background-repeat: no-repeat;
-  background-position: center; /* Added */
+  background-position:  center; /* Added */
 }
   
 #fullNameInput::placeholder{
@@ -38,12 +38,24 @@ body {
 .container {
   position: relative;
   width: 350px;
+  max-width: 90%; /* Added max-width for responsiveness */
   height: 500px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.5);
-  
+  margin: auto;
+  animation: slide-up 2.5s forwards;
+}
+@keyframes slide-up {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 5%;
+    opacity: 1;
+  }
 }
 .input-wrapper {
     position: relative;
@@ -76,14 +88,14 @@ body {
   .form-control:not(:placeholder-shown) + .control-label {
     top: -1.2em;
     font-size: 14px;
-    color: #1DA1F2; /* Color for the floating label when active */
+    color: #f1f4c6; /* Color for the floating label when active */
   }
   
   /* Adjust the color and styles as needed for the floating label */
   
   /* Optional: Add some styles for the border when focused */
   .form-control:focus {
-    border-color: #1DA1F2; /* Color for the input border when focused */
+    border-color: #b84d69; /* Color for the input border when focused */
   }
   
 
@@ -96,7 +108,10 @@ body {
   box-sizing: border-box;
   box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
 } */
-
+.option1{
+  display: inline;
+  border: #1DA1F2;
+}
 .brand-title {
   margin-top: 10px;
   font-weight: 900;
@@ -183,34 +198,35 @@ h1 {
   cursor: pointer;
 }
 
-/* Style for the selected radio button */
-.option-label input[type="radio"]:checked + label {
-  font-weight: bold;
-  color: #1DA1F2; /* Color for the selected option */
-}
-.option-label1 {
+
+.class-radio{
   display: flex;
-  align-items: center;
-  transform:translate(10px,2px);
-  margin-bottom: 10px;
-  margin-left: -80px;
-  font-size: 18px;
-  
   
 }
-.option-label1  span{
-  position: relative;
-  
-  color: #ccc;
-}
-.option-label1 input[type="radio"] {
-  margin-right: -50px;
-  vertical-align: middle;
+#option1{
+  display: block;
   transform: scale(0.5);
+  margin-left: -4.5rem;
 }
-
-
-
+.option1{
+  display: block;
+  transform: scale(1.2);
+ margin-left: -2.5rem; 
+  margin-top: 15px;
+  color: #b84d69;
+}
+#option2{
+  display: inline;
+  transform: scale(0.5);
+  margin-left: -7rem;
+}
+.option2{
+  display: block;
+  transform: scale(1.2);
+ margin-left: 4.6rem; 
+  margin-top: -15%;
+  color: #b84d69;
+}
 
 .btn-conteiner {
     display: flex;
