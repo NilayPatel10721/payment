@@ -203,31 +203,34 @@ h1 {
   display: flex;
   
 }
-#option1{
+#cash{
   display: block;
   transform: scale(0.5);
   margin-left: -4.5rem;
 }
-.option1{
+
+#online-payment{
   display: block;
-  transform: scale(1.2);
- margin-left: -2.5rem; 
-  margin-top: 15px;
-  color: #b84d69;
-}
-#option2{
-  display: inline;
   transform: scale(0.5);
-  margin-left: -7rem;
-}
-.option2{
-  display: block;
-  transform: scale(1.2);
- margin-left: 4.6rem; 
-  margin-top: -15%;
-  color: #b84d69;
+  margin-left: -4.6rem;
 }
 
+.radi0 label {
+  display: flex;
+  align-items: center;
+  margin-left: -2rem;
+  margin-right: -20rem; /* Adjust as needed for spacing */
+}
+
+.radi0 input {
+  display: flex;
+
+}
+
+.radi0 span{
+  color:azure;
+  margin-left: -80px;
+}
 .btn-conteiner {
     display: flex;
     justify-content: center;
