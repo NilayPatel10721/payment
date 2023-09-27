@@ -12,4 +12,10 @@ function type() {
   }
 }
 
-type();
+// Delay for 1 second (1000 milliseconds) before starting the animation
+setTimeout(type, 1000);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".container");
+  container.style.visibility = "visible";
+});
