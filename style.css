@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 
+
+
+
+
+
+
+
+
 input {
   caret-color: red;
 }
@@ -113,7 +121,7 @@ body {
   display: inline;
   border: #1DA1F2;
 }
-.brand-title {
+#typing-effect {
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
@@ -380,7 +388,7 @@ h1 {
     display: flex;
     position: absolute;
     top: 35%;
-    left: -5%;
+    left: -12%;
   }
 
   .names ul li{
@@ -388,7 +396,7 @@ h1 {
     font-size: large;
     color: aliceblue;
     padding: 10px;
-    
+    left: 10px;
    
   }
   .names ul li img {
@@ -404,7 +412,7 @@ h1 {
   position: absolute;
 }
 .p2{
-  top: 65px;
+  top: 69px;
   
   position: absolute;
 }
@@ -413,6 +421,7 @@ h1 {
   
   position: absolute;
 }
+
 
 
 .page3{
@@ -448,6 +457,7 @@ h1 {
   color: #333;
 }
 
+
 #page3 .input-wrapper1 {
   position: relative;
   margin-bottom: 1em;
@@ -468,11 +478,13 @@ h1 {
   color: transparent;
   display: none;
 }
-.z{
-  height: 5px;
-  width: 50px;
-  top: 50%;
+
+.qr img{
   position: absolute;
-  z-index: 0;
-  left: 20%;
+  height: 280px;
+  width: 290px;
+  left: 4.8%;
+  border-radius: 20%;
+
 }
+
