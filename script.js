@@ -1,13 +1,20 @@
-const text = "Freshers party payment";
+const text1 = "Fresher party";
+const text2 = "Payment";
 const typingSpeed = 100;
 
-let index = 0;
-const brandTitle = document.getElementById("typing-effect");
+let index1 = 0;
+let index2 = 0;
+const line1 = document.getElementById("line1");
+const line2 = document.getElementById("line2");
 
 function type() {
-  if (index < text.length) {
-    brandTitle.textContent += text.charAt(index);
-    index++;
+  if (index1 < text1.length) {
+    line1.textContent += text1.charAt(index1);
+    index1++;
+    setTimeout(type, typingSpeed);
+  } else if (index2 < text2.length) {
+    line2.textContent += text2.charAt(index2);
+    index2++;
     setTimeout(type, typingSpeed);
   }
 }
@@ -42,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add an event listener to the "NEXT" button
   nextPageButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
+    showTransitionUPI(); // Prevent the default form submission
 
     // Submit the form
     form.submit();
@@ -86,6 +94,9 @@ const submitButton1 = document.getElementById("submitButton");
 const page1Div1 = document.getElementById("page1");
 const page3Div = document.getElementById("page3"); // Changed to page3Div
 const onlinePaymentRadio = document.getElementById("online-payment"); // Changed to onlinePaymentRadio
+const box1Div = document.getElementById("box1");
+
+box1Div.style.display = "none";
 
 submitButton1.addEventListener("click", function (event) {
   event.preventDefault();
@@ -96,9 +107,12 @@ submitButton1.addEventListener("click", function (event) {
 
     setTimeout(() => {
       page1Div1.style.display = "none";
+      box1Div.style.display = "block";
       page3Div.style.display = "block"; // Changed to page3Div
       page3Div.scrollIntoView({ behavior: "smooth" });
-    }, 500); // 500 milliseconds (0.5 seconds) delay
+      box1Div.scrollIntoView({ behavior: "smooth" });
+    }, 500);
+    // 500 milliseconds (0.5 seconds) delay
   }
 });
 
@@ -107,7 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextPageButton = document.getElementById("lastbtn");
 
   nextPageButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
+    // Prevent the default form submission
 
     // Log a message to confirm the button click
     console.log("Last button clicked. Submitting form...");
@@ -115,18 +130,41 @@ document.addEventListener("DOMContentLoaded", function () {
     // Submit the form
     form.submit();
   });
-
-  function submitForm() {
-    const onlinePaymentSelected =
-      document.getElementById("online-payment").checked;
-
-    if (onlinePaymentSelected) {
-      // If Online Payment is selected, submit the form
-      document.getElementById("myForm").submit();
-    }
-
-    // Navigate to the next page
-    // Replace 'nextPage.html' with the actual URL of the next page
-    window.location.href = "nextPage.html";
-  }
 });
+
+function submitForm() {
+  const formUrl =
+    "https://codersblock.com/blog/creating-glow-effects-with-css/#:~:text=By%20adding%20inset%20to%20your%20box-shadow%20declaration%2C%20you,div%20%7B%20width%3A%20400px%3B%20height%3A%20200px%3B%20background-color%3A%20%23fff%3B";
+
+  const fullName = document.getElementById("fullNameInput").value;
+  const whatsappNumber = document.getElementById("whatsappInput").value;
+  const paymentMethod = document.querySelector(
+    'input[name="entry.1299154542"]:checked'
+  ).value;
+
+  const formData = new FormData();
+  formData.append("entry.1405314269", fullName);
+  formData.append("entry.815742534", whatsappNumber);
+  formData.append("entry.1299154542", paymentMethod);
+
+  // Send a POST request to the Google Form URL
+  fetch(formUrl, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors", // Set mode to no-cors for a simple POST request without handling response
+  })
+    .then(() => {
+      // Handle success
+      console.log("Form submitted successfully!");
+    })
+    .catch((error) => {
+      // Handle errors
+      console.error("Error submitting the form:", error);
+    });
+}
+
+function submitForm() {
+  // Assuming your form has the ID 'myForm'
+  const form = document.getElementById("myForm");
+  form.submit();
+}
