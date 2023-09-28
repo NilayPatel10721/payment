@@ -50,12 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const formId =
-  "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5cHXVWWaGDjoQvlusTxGJXCpCyE9Pd5sOOKABd24glejbwg/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLSc5cHXVWWaGDjoQvlusTxGJXCpCyE9Pd5sOOKABd24glejbwg/formResponse";
 const formURL = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
 
 const formData = {
   "entry.1405314269": "John Doe", // Replace with your form field names and values
   "entry.815742534": "1234567890",
+  "entry.1014591765": "full-name",
   "entry.1299154542": "Credit Card",
 };
 
@@ -98,5 +99,34 @@ submitButton1.addEventListener("click", function (event) {
       page3Div.style.display = "block"; // Changed to page3Div
       page3Div.scrollIntoView({ behavior: "smooth" });
     }, 500); // 500 milliseconds (0.5 seconds) delay
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("myForm");
+  const nextPageButton = document.getElementById("lastbtn");
+
+  nextPageButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Log a message to confirm the button click
+    console.log("Last button clicked. Submitting form...");
+
+    // Submit the form
+    form.submit();
+  });
+
+  function submitForm() {
+    const onlinePaymentSelected =
+      document.getElementById("online-payment").checked;
+
+    if (onlinePaymentSelected) {
+      // If Online Payment is selected, submit the form
+      document.getElementById("myForm").submit();
+    }
+
+    // Navigate to the next page
+    // Replace 'nextPage.html' with the actual URL of the next page
+    window.location.href = "nextPage.html";
   }
 });
