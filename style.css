@@ -432,3 +432,47 @@ h1 {
   transform: translateX(-100%);
   opacity: 0;
 }
+#page3 .form-control1 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+
+#page3 .control-label1 {
+  position: absolute;
+  pointer-events: none;
+  left: -8px;
+  top: 10px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+  color: #333;
+}
+
+#page3 .input-wrapper1 {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+#page3 .form-control1:focus + .control-label1,
+#page3 .form-control1:not(:placeholder-shown) + .control-label1 {
+  font-size: 14px;
+  top: -18px;
+  color:#ccc;
+}
+.page3::placeholder{
+  color: transparent;
+  display: none;
+}
+
+.form-control1::placeholder{
+  color: transparent;
+  display: none;
+}
+.z{
+  height: 5px;
+  width: 50px;
+  top: 50%;
+  position: absolute;
+  z-index: 0;
+  left: 20%;
+}
