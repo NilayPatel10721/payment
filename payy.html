@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="st.css">
+    <link rel="icon" href="cash.jpg" type="image/jpg">
+</head>
+<body>
+    
+
+<div class="container1">
+    <!-- <div class="brand-logo"></div> -->
+    <h1>submission confirm</h1>
+    <h3>Thank for your submission</h3>
+    <h2 class="h" id="line"></h2>
+</div>
+    
+<script>
+ const text = 'Congratulations! You are invited to the biggest party of the year';
+    const fresherPartyText = 'Fresher Party!';
+    let typingSpeed = 70;
+    let index = 0;
+    const line = document.getElementById("line");
+
+    function type() {
+      if (index < text.length) {
+        line.innerHTML += text.charAt(index);
+        index++;
+        if (index === Math.floor(text.length / 2)) {
+          // Adjust typing speed in the middle of the text
+          typingSpeed = 50; // Adjust this value for the desired speed
+        }
+        setTimeout(type, typingSpeed);
+      } else if (index === text.length) {
+        line.innerHTML += '<br><br>';
+        index++;
+        setTimeout(type, typingSpeed);
+      } else if (index - text.length - 1 < fresherPartyText.length) {
+        line.innerHTML += fresherPartyText.charAt(index - text.length - 1);
+        index++;
+        setTimeout(type, 10);
+      }
+    }
+
+    setTimeout(type, 0);
+</script>
+      
+</body>
+
+</html>
