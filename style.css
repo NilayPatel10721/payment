@@ -242,7 +242,8 @@ h1 {
 
 .btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Align to the right */
+  margin-right: 30px; /* 30px from the right */
   color: #ffffff; /* Adjust the color property */
   background-color: #ff135a; /* Adjust the background-color property */
   border: 1px solid #ff145b80; /* Adjust the border property */
@@ -264,6 +265,17 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box-shadow for high-density displays */
   }
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  color: #ffffff; /* Adjust the color property */
+  background-color: #ff135a; /* Adjust the background-color property */
+  border: 1px solid #ff145b80; /* Adjust the border property */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the box-shadow property */
+}
+
+
 
 .btn-conteiner {
     display: flex;
