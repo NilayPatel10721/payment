@@ -132,39 +132,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function submitForm() {
-  const formUrl =
-    "https://codersblock.com/blog/creating-glow-effects-with-css/#:~:text=By%20adding%20inset%20to%20your%20box-shadow%20declaration%2C%20you,div%20%7B%20width%3A%20400px%3B%20height%3A%20200px%3B%20background-color%3A%20%23fff%3B";
+var submitted = false;
 
-  const fullName = document.getElementById("fullNameInput").value;
-  const whatsappNumber = document.getElementById("whatsappInput").value;
-  const paymentMethod = document.querySelector(
-    'input[name="entry.1299154542"]:checked'
-  ).value;
+const form = document.getElementById("myForm");
+const buttons = form.querySelectorAll('button[type="submit"]');
 
-  const formData = new FormData();
-  formData.append("entry.1405314269", fullName);
-  formData.append("entry.815742534", whatsappNumber);
-  formData.append("entry.1299154542", paymentMethod);
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    submitted = true;
+  });
+});
 
-  // Send a POST request to the Google Form URL
-  fetch(formUrl, {
-    method: "POST",
-    body: formData,
-    mode: "no-cors", // Set mode to no-cors for a simple POST request without handling response
-  })
-    .then(() => {
-      // Handle success
-      console.log("Form submitted successfully!");
-    })
-    .catch((error) => {
-      // Handle errors
-      console.error("Error submitting the form:", error);
-    });
-}
+// function submitForm() {
+//   // Assuming your form has the ID 'myForm'
+//   const form = document.getElementById("myForm");
 
-function submitForm() {
-  // Assuming your form has the ID 'myForm'
-  const form = document.getElementById("myForm");
-  form.submit();
-}
+//   // Change the form action URL
+//   form.action = "https://www.google.com/forms/about/"; // Replace NEW_FORM_ACTION_URL with the desired URL
+//   form.submit();
+// }
+
+// var submitted = false;
+
+// // Create an iframe to handle the form submission
+// const hiddenConfirm = document.createElement("iframe");
+// hiddenConfirm.name = "hiddenConfirm";
+// hiddenConfirm.id = "hiddenConfirm";
+// hiddenConfirm.style.display = "none";
+// hiddenConfirm.onload = function () {
+//   if (submitted) {
+//     window.location = "payy.html";
+//   }
+// };
+// document.body.appendChild(hiddenConfirm);
+
+// // Update the form submission handler to set submitted to true
+// document.getElementById("myForm").addEventListener("submit", function () {
+//   submitted = true;
+// });
