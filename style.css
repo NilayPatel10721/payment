@@ -233,13 +233,38 @@ h1 {
 
 .radi0 input {
   display: flex;
-
 }
 
-.radi0 span{
-  color:azure;
+.radi0 span {
+  color: azure;
   margin-left: -80px;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  color: #ffffff; /* Adjust the color property */
+  background-color: #ff135a; /* Adjust the background-color property */
+  border: 1px solid #ff145b80; /* Adjust the border property */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the box-shadow property */
+}
+
+@media (max-width: 767px) {
+  .radi0 label {
+    display: flex;
+    margin-bottom: 5px; /* Adjust the margin as needed */
+    margin-right: 0; /* Adjust the margin-right property */
+  }
+}
+
+/* Optional: Adjust styles for better compatibility with iOS Safari */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn-container {
+    border: 1px solid #ff145b; /* Adjust border for high-density displays */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box-shadow for high-density displays */
+  }
+}
+
 .btn-conteiner {
     display: flex;
     justify-content: center;
@@ -247,12 +272,6 @@ h1 {
     --color-background: #ff135a;
     --color-outline: #ff145b80;
     --color-shadow: #00000080;
-  }
-  @media (max-width: 767px) {
-    .radi0 label {
-      display: flex;
-      margin-bottom: 5px; /* Adjust the margin as needed */
-    }
   }
 
 
