@@ -248,6 +248,12 @@ h1 {
     --color-outline: #ff145b80;
     --color-shadow: #00000080;
   }
+  @media (max-width: 767px) {
+    .radi0 label {
+      display: flex;
+      margin-bottom: 5px; /* Adjust the margin as needed */
+    }
+  }
 
 
   .btn-content {
