@@ -29,7 +29,8 @@
     <!-- <div class="brand-logo"></div> -->
 
     <div class="inputs">
-        <form id="myForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc5cHXVWWaGDjoQvlusTxGJXCpCyE9Pd5sOOKABd24glejbwg/formResponse">
+      <!-- <iframe  name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onload="if(submitted){window.location=}"></iframe> -->
+        <form id="myForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc5cHXVWWaGDjoQvlusTxGJXCpCyE9Pd5sOOKABd24glejbwg/formResponse" method="POST" target="hiddenConfirm">
           
          
 
@@ -166,11 +167,11 @@
      
       </a>
   </button>
-
+  
 </div>  
 </div> 
 </form>
-
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" onload="if(submitted) { window.location.href = 'payy.html'; }"></iframe>
       <script src="script.js"></script>
 </body>
 </html>
